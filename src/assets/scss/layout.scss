@@ -1,0 +1,111 @@
+@import "colors.scss";
+@import "mixins.scss";
+
+$eurostile: "eurostile", sans-serif;
+$navbar-height: 30px;
+$footer-height: 50px;
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: $eurostile;
+    margin-bottom: $footer-height;
+    background-color:$black;
+}
+
+header {
+    @include linear-gradient(#000000, #1d1b1c);
+    color: $light-red;
+    font-weight:bold;
+
+    .brand {
+        max-width:450px;
+        text-align:left;
+        padding:5px;
+        div {
+            @include reset-padding-margin();
+        }
+        img {
+            max-height:100px;
+            display:inline;
+        }
+        .brand-name {
+            font-family: $eurostile;            
+            font-size:70px;
+            font-weight: bold;
+            line-height:75px;
+        }
+        .brand-tagline {
+            position:relative;
+            bottom:10px;
+            right:60px;
+            text-align:right;
+        }
+    }
+    nav.navbar {
+        background-color:$light-red;
+        padding:0;
+        margin:0;
+        min-height:$navbar-height;
+        li {
+            background-color:transparent;
+            border-right:1px solid $black;
+            padding:0;
+            margin:0;
+            min-height:$navbar-height;
+        }
+        li.active {
+            background-color:$active;
+            a {
+                color:$white;
+            }
+        }
+        .nav-bar-collapse-toggle {
+            display: none;
+        }
+        .navbar-collapse.show {
+            li {
+                border-right:none;
+            } 
+            a.nav-link {
+                line-height: initial;
+            }
+            .nav-bar-collapse-toggle {
+                display:block;
+            }
+            i {
+                display: none;
+            }
+        }
+
+        a.nav-link {
+            font: bold 16px $eurostile;
+            color: $black;
+            line-height: $navbar-height;
+            padding:5px;
+        }
+
+        i {
+            line-height: $navbar-height - 15px;
+        }
+    }
+    
+}
+
+.container.wrapper {
+    max-width:960px;
+    background-color:$content-background;
+    min-height:100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footer-height;
+    line-height: $footer-height;
+    background-color:$footer-bg;
+}

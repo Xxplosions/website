@@ -1,0 +1,34 @@
+$white:#FFF;
+$light-red:#DA1B06;
+h1.page-title {
+    color:$white;
+    font-weight:bold;
+    width:100%;
+    text-align:center;
+}
+
+section {
+    color:$white;
+    padding-left:15px;
+    padding-right:15px;
+    h2 {
+        display:block;
+        width:100%;
+    }
+    div {
+        display:inline-block;
+    }
+    div[class*=col] p{
+        margin-bottom:0;
+    }
+    img {
+        max-height:150px;
+        border-radius:30px;
+        border:5px solid $light-red;
+
+    }
+    a {
+        color:$white;
+        font-size:20px;
+    }
+}
